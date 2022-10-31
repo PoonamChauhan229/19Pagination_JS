@@ -24,6 +24,8 @@ async function getUsersData() {
     paginationDiv.append(paginationButton)
 
     paginationButton.addEventListener("click", function () {
+      // slice (0,10)=>0-9(length=>10) i=1
+      // slice  (10,20)=>10-19(length=>10) i=2
       const pageData = userList.slice((i - 1) * 10, i * 10);
       console.log(pageData);
       document.querySelector(".userlist").innerHTML = "";
@@ -32,6 +34,6 @@ async function getUsersData() {
   }
 
   const firstTenUsers = userList.slice(0, 10);
-  firstTenUsers.map((user) => createRow(user));
+  firstTenUsers.map((element) => createRow(element));
 }
 getUsersData();
